@@ -54,4 +54,6 @@ The idea is that for every n, we would just compute C(n, i) with i starting from
 
 ### 54
 
-This seems to be a rather engineering problem, so I guess notes aren't quite helpful.
+This seems to be a rather engineering problem, so I guess notes aren't quite helpful. There are some designing choices in my program: using enums to represent types, wrap card comparison and representation in a class, and specifically representing the value as one tuple of hand type and an auxillary list. I took advantage of the fact that once two hands have the same type, the order of comparison you make is fixed given the specific hand type, and it come out pretty neat written in Python.
+
+One thing worth mentioning is that the Flush type needs to be treated differently, because the color of card is independent with the numbers, which could results in different situations. In my program I first calculated without considering color, and then before returning the result dealt with the special occations.
